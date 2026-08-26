@@ -22,11 +22,9 @@ public class Main
 
 		contagemAbaixoMedia(tempos, tempoMedio);
 
-		int temposOrdenados[] = new int[qtdeParticipantes];
-		temposOrdenados = ordernarTempos(tempos);
+		int[] temposOrdenados = ordernarTempos(tempos);
 
-		String participantesOrdenados[] = new String[qtdeParticipantes];
-		participantesOrdenados = ordernarParticipantes(participantes, tempos, temposOrdenados);
+		String[] participantesOrdenados = ordernarParticipantes(participantes, tempos, temposOrdenados);
 
 		maiorMenorTempo(participantesOrdenados, temposOrdenados);
 
