@@ -4,12 +4,13 @@ public class Main
 {
 	public static void main(String[] args) 
 	{
-	    String nome = lerNome();
+		Scanner sc = new Scanner(System.in);
+
+	    String nome = lerNome(sc);
 	    
-	    double notas[] = new double[3];
-		notas = lerNotas();
+		double[] notas = lerNotas(sc);
 	    
-	    double frequencia = lerFrequencia();
+	    double frequencia = lerFrequencia(sc);
 	    
 	    double media = calcularMedia(notas);
 	    
@@ -17,22 +18,18 @@ public class Main
 	}
 	
 	
-	public static String lerNome() 
+	public static String lerNome(Scanner sc) 
 	{
-	    Scanner scanner = new Scanner(System.in);
-	    
 	    System.out.print("Digite o nome do estudante: ");
-		String nome = scanner.nextLine();
+		String nome = sc.nextLine();
 		
 		System.out.println();
 		
 		return nome;
 	}
 	
-	public static double[] lerNotas() 
-	{
-	    Scanner scanner = new Scanner(System.in);
-	    
+	public static double[] lerNotas(Scanner sc) 
+	{	    
 	    double notas[] = new double[3];
 	    
 	    for (int i = 0; i < 3; i++) 
@@ -40,7 +37,7 @@ public class Main
 	        int posicao = i + 1;
 
 			System.out.print("Digite a " + posicao + "º nota: ");
-			double nota = scanner.nextDouble();
+			double nota = sc.nextDouble();
 			
 			while (nota < 0 || nota > 10)
             {
@@ -48,7 +45,7 @@ public class Main
                 
                 System.out.println("Nota inválida! A nota deve estar entre 0 e 10.");
                 System.out.print("Digite novamente a " + posicao + "º nota: ");
-                nota = scanner.nextDouble();
+                nota = sc.nextDouble();
                 
                 System.out.println();
             }
@@ -61,12 +58,10 @@ public class Main
 		return notas;
 	}
 	
-	public static double lerFrequencia()
-	{
-	    Scanner scanner = new Scanner(System.in);
-	    
+	public static double lerFrequencia(Scanner sc)
+	{	    
 	    System.out.print("Digite a porcentagem de frequência do estudante (apenas números): ");
-		double frequencia = scanner.nextDouble();
+		double frequencia = sc.nextDouble();
 		
 		while (frequencia < 0 || frequencia > 100)
         {
@@ -74,7 +69,7 @@ public class Main
             
             System.out.println("Frequência inválida! A porcentagem deve estar entre 0 e 100.");
             System.out.print("Digite novamente a frequência: ");
-            frequencia = scanner.nextDouble();
+            frequencia = sc.nextDouble();
                 
             System.out.println();
         }
