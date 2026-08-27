@@ -37,14 +37,14 @@ public class Main
 
 		Scanner sc = new Scanner(System.in);
 
-		System.out.print("Digite o ano: ");
+		System.out.print("Digite o dia: ");
 		data[0] = sc.nextInt();
 
 		System.out.print("Digite o mês: ");
 		data[1] = sc.nextInt();
 
-		System.out.print("Digite o dia: ");
-		data[2] = sc.nextInt();
+		System.out.print("Digite o ano: ");
+		data[2] = sc.nextInt();	
 		System.out.println();	
 		
 		System.out.println("Data cadastrada: " + data[0] + "/" + data[1] + "/" + data[2]);
@@ -58,7 +58,7 @@ public class Main
 	{
 		boolean anoBissexto = false;
 
-		if ((data[0] % 4 == 0 && data[0] % 100 != 0) || data[0] % 400 == 0)
+		if ((data[2] % 4 == 0 && data[2] % 100 != 0) || data[2] % 400 == 0)
 		{
 			anoBissexto = true;
 		}	
@@ -97,7 +97,7 @@ public class Main
 	{
 		boolean dataValida = true;
 
-		if (data[0] < 1 || data[0] > 2026)
+		if (data[2] < 1 || data[2] > 2026)
 		{
 			dataValida = false;
 		}
@@ -107,7 +107,7 @@ public class Main
 		}
 		else
 		{
-			if (data[2] < 1 || data[2] > maximoDias)
+			if (data[0] < 1 || data[0] > maximoDias)
 			{
 				dataValida = false;
 			}
@@ -144,7 +144,7 @@ public class Main
 
     	for (int i = 1; i < data[1]; i++)
     	{
-        	int mes[] = {data[0], i, 1};
+        	int mes[] = {data[2], i, 1};
 
         	posicao += verificarDiasMes(mes, anoBissexto);
     	}
