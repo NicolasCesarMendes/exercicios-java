@@ -68,27 +68,33 @@ public class Main
 
 	public static int verificarDiasMes(int data[], boolean anoBissexto) 
 	{
-		int maximoDias;
+		int maximoDias = 0;
 
-		if (data[1] == 1 || data[1] == 3 || data[1] == 5 || data[1] == 7 || data[1] == 8 || data[1] == 10 || data[1] == 12)
-		{
-			maximoDias = 31;
-		}
-		else if (data[1] == 2)
-		{
-			if (anoBissexto)
+            switch (data[1]) 
 			{
-				maximoDias = 29;
-			}
-			else 
-			{
-				maximoDias = 28;
-			}
-		}
-		else
-		{
-			maximoDias = 30;
-		}
+                case 1 -> maximoDias = 31;
+				case 2 -> 
+				{
+                    if (anoBissexto) 
+					{
+                        maximoDias = 29;
+                    }
+					else 
+					{
+                        maximoDias = 28;
+                    }
+                }
+                case 3 -> maximoDias = 31;
+				case 4 -> maximoDias = 30;
+                case 5 -> maximoDias = 31;
+				case 6 -> maximoDias = 30;
+                case 7 -> maximoDias = 31;
+                case 8 -> maximoDias = 31;
+				case 9 -> maximoDias = 30;
+                case 10 -> maximoDias = 31;
+				case 11 -> maximoDias = 30;
+                case 12 -> maximoDias = 31;
+            }
 
 		return maximoDias;
 	}
@@ -97,7 +103,7 @@ public class Main
 	{
 		boolean dataValida = true;
 
-		if (data[2] < 1 || data[2] > 2026)
+		if (data[2] < 1)
 		{
 			dataValida = false;
 		}
@@ -105,12 +111,9 @@ public class Main
 		{
 			dataValida = false;
 		}
-		else
+		else if (data[0] < 1 || data[0] > maximoDias)
 		{
-			if (data[0] < 1 || data[0] > maximoDias)
-			{
-				dataValida = false;
-			}
+			dataValida = false;
 		}
 
 		return dataValida;
@@ -140,11 +143,11 @@ public class Main
 
 	public static void verificarPosicao(int data[], boolean anoBissexto) 
 	{
-		int posicao = data[2];
+		int posicao = data[0];
 
     	for (int i = 1; i < data[1]; i++)
     	{
-        	int mes[] = {data[2], i, 1};
+        	int mes[] = {1, i, data[2]};
 
         	posicao += verificarDiasMes(mes, anoBissexto);
     	}
