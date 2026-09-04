@@ -84,7 +84,11 @@ public class Main
 		{
 			char caractere = Character.toUpperCase(frase.charAt(i));
 
-			if (caractere == 'A' || caractere == 'E' || caractere == 'I' || caractere == 'O' || caractere == 'U')
+			if (caractere == 'A' || caractere == 'Á' || caractere == 'À' || caractere == 'Â' || caractere == 'Ã' ||
+				caractere == 'E' || caractere == 'É' || caractere == 'Ê' ||
+				caractere == 'I' || caractere == 'Í' ||
+				caractere == 'O' || caractere == 'Ó' || caractere == 'Ô' || caractere == 'Õ' ||
+				caractere == 'U' || caractere == 'Ú' || caractere == 'Ü')
 			{
 				qtdeVogais++;
 			}
@@ -101,8 +105,12 @@ public class Main
 		{
 			char caractere = Character.toUpperCase(frase.charAt(i));
 
-			if (Character.isLetter(caractere) && caractere != 'A' && caractere != 'E' && caractere != 'I' 
-											  && caractere != 'O' && caractere != 'U')
+			if (Character.isLetter(caractere) &&
+				caractere != 'A' && caractere != 'Á' && caractere != 'À' && caractere != 'Â' && caractere != 'Ã' &&
+				caractere != 'E' && caractere != 'É' && caractere != 'Ê' &&
+				caractere != 'I' && caractere != 'Í' &&
+				caractere != 'O' && caractere != 'Ó' && caractere != 'Ô' && caractere != 'Õ' &&
+				caractere != 'U' && caractere != 'Ú' && caractere != 'Ü')
 			{
 				qtdeConsoantes++;
 			}
