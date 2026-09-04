@@ -72,7 +72,7 @@ public class Main
 
             switch (data[1]) 
 			{
-                case 1 -> maximoDias = 31;
+                case 1, 3, 5, 7, 8, 10, 12 -> maximoDias = 31;
 				case 2 -> 
 				{
                     if (anoBissexto) 
@@ -84,16 +84,7 @@ public class Main
                         maximoDias = 28;
                     }
                 }
-                case 3 -> maximoDias = 31;
-				case 4 -> maximoDias = 30;
-                case 5 -> maximoDias = 31;
-				case 6 -> maximoDias = 30;
-                case 7 -> maximoDias = 31;
-                case 8 -> maximoDias = 31;
-				case 9 -> maximoDias = 30;
-                case 10 -> maximoDias = 31;
-				case 11 -> maximoDias = 30;
-                case 12 -> maximoDias = 31;
+				case 4, 6, 9, 11 -> maximoDias = 30;
             }
 
 		return maximoDias;
