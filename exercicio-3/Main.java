@@ -100,6 +100,8 @@ public class Main
 		{
 			System.out.println("Não existe divisão por 0.");
 
+			System.out.println();
+
 			return 0;
 		}
 
